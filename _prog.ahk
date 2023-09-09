@@ -63,9 +63,9 @@ class Prog extends Gui {
         super.__New('-MinimizeBox -MaximizeBox',,this)
         this.OnEvent('Close',(*) => (this.Close()))
         this.SetFont('s' fontSize, fontFace)
-        t1 := this.Add('Text','xm w10 vText1','')
+        t1 := this.Add('Text','xm w10 -Wrap vText1','')
         p := this.Add('Progress','xm w10 vProg',0)
-        t2 := this.Add('Text','xm w10 vText2','')
+        t2 := this.Add('Text','xm w10 -Wrap vText2','')
         txt := this.Add('Text','xm Hidden cRed vCancelNotify','Cancel pending...'), txt.GetPos(&tX,,&tW)
         
         this.DefineProp('Cancel',{Call:(ctl,info) => (ctl.gui.Abort := true, ctl.gui['CancelNotify'].Visible := true)})
